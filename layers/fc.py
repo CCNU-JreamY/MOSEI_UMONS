@@ -26,9 +26,9 @@ class FC(nn.Module):
         return x
 
 
-class MLP(nn.Module):
+class SoftAttention(nn.Module):
     def __init__(self, in_size, mid_size, out_size, dropout_r=0., use_relu=True):
-        super(MLP, self).__init__()
+        super(SoftAttention, self).__init__()
 
         self.fc = FC(in_size, mid_size, dropout_r=dropout_r, use_relu=use_relu)
         self.linear = nn.Linear(mid_size, out_size)
